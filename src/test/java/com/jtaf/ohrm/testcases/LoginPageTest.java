@@ -8,8 +8,7 @@ public class LoginPageTest {
 	public static void main(String[] args) {
 
 		LoginPage loginPage = new LoginPage();
-		loginPage.doLogin();
-		DashboardPage dashboardPage = new DashboardPage();
+		DashboardPage dashboardPage = loginPage.doLogin();
 		dashboardPage.doLogout();
 	}
 }
