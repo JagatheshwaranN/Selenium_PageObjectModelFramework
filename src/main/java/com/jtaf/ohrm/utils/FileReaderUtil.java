@@ -15,20 +15,18 @@ public class FileReaderUtil {
 	public static Properties properties = new Properties();
 	public static File configFileObj, ObjectRepoFileObj;
 	public static FileInputStream configfileInputStream, ObjectRepofileInputStream;
-	// public static String objectRepoPath =
-	// "\\src\\test\\resources\\com\\jtaf\\properties\\objectrepo.properties";
+	public static String objectRepoPath = "\\src\\test\\resources\\com\\jtaf\\properties\\objectrepo.properties";
 	public static String configPath = "\\src\\test\\resources\\com\\jtaf\\properties\\config.properties";
 
 	public static void loadPropertyFiles() {
 
 		configFileObj = new File(System.getProperty("user.dir") + configPath);
-		// ObjectRepoFileObj = new File(System.getProperty("user.dir") +
-		// objectRepoPath);
+		ObjectRepoFileObj = new File(System.getProperty("user.dir") + objectRepoPath);
 		try {
 			configfileInputStream = new FileInputStream(configFileObj);
-			// ObjectRepofileInputStream = new FileInputStream(ObjectRepoFileObj);
+			ObjectRepofileInputStream = new FileInputStream(ObjectRepoFileObj);
 			properties.load(configfileInputStream);
-			// properties.load(ObjectRepofileInputStream);
+			properties.load(ObjectRepofileInputStream);
 			log.debug("Config & Object Repository property files are loaded !!");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
