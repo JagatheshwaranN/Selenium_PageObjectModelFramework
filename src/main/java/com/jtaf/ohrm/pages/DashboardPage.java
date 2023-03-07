@@ -8,12 +8,13 @@ public class DashboardPage extends Page {
 
 	public void userDropDown() {
 
-		_driver.findElement(By.className("oxd-userdropdown-tab")).click();
-		_driver.findElement(By.cssSelector(".oxd-dropdown-menu")).isDisplayed();
+		driver.findElement(By.className("oxd-userdropdown-tab")).click();
+		driver.findElement(By.cssSelector(".oxd-dropdown-menu")).isDisplayed();
 	}
 
 	public void doLogout() {
+		
 		userDropDown();
-		_driver.findElement(By.xpath("//a[contains(@href,'logout')]")).click();
+		driver.findElement(By.xpath("//a[contains(@href,'logout')]")).click();
 	}
 }
