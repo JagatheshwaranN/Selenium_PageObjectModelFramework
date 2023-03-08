@@ -36,10 +36,10 @@ public class ReportListener extends Page implements ITestListener, ISuiteListene
 	public void onTestSuccess(ITestResult result) {
 
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
-		String passTestCaseBase64ScreenShot = "data:image/png;base64,"
-				+ ((TakesScreenshot) Objects.requireNonNull(Page.driver)).getScreenshotAs(OutputType.BASE64);
+		String passTestCaseBase64Snapshot = "data:image/png;base64,"
+				+ ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
 		test.log(Status.PASS, result.getName().toUpperCase() + " Test Passed",
-				test.addScreenCaptureFromBase64String(passTestCaseBase64ScreenShot).getModel().getMedia().get(0));
+				test.addScreenCaptureFromBase64String(passTestCaseBase64Snapshot).getModel().getMedia().get(0));
 		String screenToAttach = captureSnapShot();
 		Reporter.log("<br>");
 		Reporter.log(result.getMethod().getMethodName() + " Test Passed..!!");
@@ -51,10 +51,10 @@ public class ReportListener extends Page implements ITestListener, ISuiteListene
 	public void onTestFailure(ITestResult result) {
 
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
-		String failTestCaseBase64ScreenShot = "data:image/png;base64,"
-				+ ((TakesScreenshot) Objects.requireNonNull(Page.driver)).getScreenshotAs(OutputType.BASE64);
-		test.log(Status.PASS, result.getName().toUpperCase() + " Test Passed",
-				test.addScreenCaptureFromBase64String(failTestCaseBase64ScreenShot).getModel().getMedia().get(0));
+		String failTestCaseBase64Snapshot = "data:image/png;base64,"
+				+ ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
+		test.log(Status.FAIL, result.getName().toUpperCase() + " Test Failed",
+				test.addScreenCaptureFromBase64String(failTestCaseBase64Snapshot).getModel().getMedia().get(0));
 		String screenToAttach = captureSnapShot();
 		Reporter.log("<br>");
 		Reporter.log(result.getMethod().getMethodName() + " Test Failed..!!");
@@ -104,7 +104,11 @@ public class ReportListener extends Page implements ITestListener, ISuiteListene
 	}
 
 	public static String captureSnapShot() {
-
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		Calendar calendar = Calendar.getInstance();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_YYYY_hh_mm_ss");
 		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

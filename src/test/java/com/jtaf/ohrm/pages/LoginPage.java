@@ -4,10 +4,10 @@ import com.jtaf.ohrm.common.ReusableComponent;
 
 public class LoginPage extends ReusableComponent {
 
-	public DashboardPage doLogin() {
+	public DashboardPage doLogin(String username, String password) {
 
-		elementType("userName", "admin");
-		elementType("password", "admin123");
+		elementType("userName", username);
+		elementType("passWord", password);
 		elementClick("login");
 		return new DashboardPage();
 	}

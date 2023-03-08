@@ -13,6 +13,12 @@ public class DashboardPage extends ReusableComponent {
 	public void doLogout() {
 
 		userDropDown();
-		elementClick("uddLogout");
+		elementClick("logout");
+	}
+
+	public AdminPage navigateToAdminPage() {
+
+		elementClick("adminSection");
+		return new AdminPage();
 	}
 }
