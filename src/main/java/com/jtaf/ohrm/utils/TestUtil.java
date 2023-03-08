@@ -22,4 +22,12 @@ public class TestUtil extends Page {
 	public static boolean isTestRunnable(String testName, ExcelReaderUtil excel) {
 		return false;
 	}
+
+	public static void waitForSomeTime() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
 }
