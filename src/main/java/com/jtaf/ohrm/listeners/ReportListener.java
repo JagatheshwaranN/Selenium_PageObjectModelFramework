@@ -14,11 +14,17 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import com.aventstack.extentreports.Status;
 import com.jtaf.ohrm.base.Page;
-import com.jtaf.ohrm.common.ReusableComponent;
 import com.jtaf.ohrm.utils.EmailConfig;
 import com.jtaf.ohrm.utils.EmailTriggerUtil;
 
-public class ReportListener extends ReusableComponent implements ITestListener, ISuiteListener {
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import org.apache.commons.io.FileUtils;
+
+public class ReportListener extends Page implements ITestListener, ISuiteListener {
 
 	public static String messageBody;
 
@@ -95,5 +101,20 @@ public class ReportListener extends ReusableComponent implements ITestListener, 
 		} catch (UnknownHostException ex) {
 			ex.printStackTrace();
 		}
+	}
+
+	public static String captureSnapShot() {
+
+		Calendar calendar = Calendar.getInstance();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd_MM_YYYY_hh_mm_ss");
+		File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File destination = new File(System.getProperty("user.dir") + "/src/test/resources/com/jtaf/screenshots/"
+				+ simpleDateFormat.format(calendar.getTime()) + ".png");
+		try {
+			FileUtils.copyFile(source, destination);
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		return destination.getAbsolutePath();
 	}
 }
