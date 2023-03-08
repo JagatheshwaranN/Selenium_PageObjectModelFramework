@@ -12,7 +12,19 @@ public class ExtentReportUtil {
 	public static ExtentReports extentReports;
 
 	public static ExtentReports getInstance() {
-		return extentReports;
 
+		if (extentSparkReporter == null) {
+			extentSparkReporter = new ExtentSparkReporter(
+					System.getProperty("user.dir") + "//target//report//ExtentSpark.html");
+			try {
+				extentSparkReporter.loadXMLConfig(new File(System.getProperty("user.dir")
+						+ "//src//test//resources//com//jtaf//extent//report-config.xml"));
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
+			extentReports = new ExtentReports();
+			extentReports.attachReporter(extentSparkReporter);
+		}
+		return extentReports;
 	}
 }

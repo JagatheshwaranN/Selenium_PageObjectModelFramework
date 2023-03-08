@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
+import com.jtaf.ohrm.utils.ExcelReaderUtil;
 import com.jtaf.ohrm.utils.ExtentReportUtil;
 import com.jtaf.ohrm.utils.FileReaderUtil;
 
@@ -26,8 +26,8 @@ public class Page extends FileReaderUtil {
 	public static ExtentReports report = ExtentReportUtil.getInstance();
 	public static ExtentTest test;
 	public static String browser;
-//	public static ExcelReaderUtil excelReaderUtil = new ExcelReaderUtil(
-//			System.getProperty("user.dir") + "/src/test/resources/excel/testData.xlsx");
+	public static ExcelReaderUtil excelReaderUtil = new ExcelReaderUtil(
+			System.getProperty("user.dir") + "/src/test/resources/excel/testData.xlsx");
 
 	public Page() {
 
@@ -52,7 +52,6 @@ public class Page extends FileReaderUtil {
 				driver = new EdgeDriver();
 				log.debug(getDataFromPropFile("Browser") + " driver started");
 			}
-
 			driver.manage().window().maximize();
 			driver.manage().timeouts()
 					.implicitlyWait(Duration.ofSeconds(Integer.parseInt(getDataFromPropFile("implicit.wait"))));
