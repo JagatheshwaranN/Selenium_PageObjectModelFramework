@@ -38,7 +38,7 @@ public class FileReaderUtil {
 	public static String getDataFromPropFile(String key) {
 
 		String dataFromPropFile = null;
-		if (key != null && properties != null) {
+		if (key != null) {
 			dataFromPropFile = properties.getProperty(key).trim();
 		}
 		return dataFromPropFile;

@@ -127,11 +127,6 @@
 			<artifactId>json-path</artifactId>
 			<version>2.7.0</version>
 		</dependency>
-		<dependency>
-			<groupId>GoibiboSiteAutomation</groupId>
-			<artifactId>GoibiboSiteAutomation</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -142,7 +137,7 @@
 				<configuration>
 					<testFailureIgnore> false </testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/runner/testng.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/com/jtaf/runner/testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

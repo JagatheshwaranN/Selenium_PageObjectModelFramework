@@ -24,10 +24,10 @@ public class Page extends FileReaderUtil {
 
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static ExtentReports report = ExtentReportUtil.getInstance();
-	public static ExtentTest test;
+	protected static ExtentTest test;
 	public static String browser;
 	public static ExcelReaderUtil excelReaderUtil = new ExcelReaderUtil(
-			System.getProperty("user.dir") + "/src/test/resources/excel/testData.xlsx");
+			System.getProperty("user.dir") + "/src/test/resources/com/jtaf/excel/testData.xlsx");
 
 	public Page() {
 
@@ -59,5 +59,9 @@ public class Page extends FileReaderUtil {
 			driver.get(getDataFromPropFile("url"));
 			log.debug("Driver launches the application " + getDataFromPropFile("url"));
 		}
+	}
+
+	public static void closeBrowser() {
+		driver.quit();
 	}
 }

@@ -1,11 +1,14 @@
 package com.jtaf.ohrm.testcases;
 
+import org.testng.annotations.Test;
+
 import com.jtaf.ohrm.pages.DashboardPage;
 import com.jtaf.ohrm.pages.LoginPage;
 
-public class LoginPageTest {
+public class LoginPageTest extends BaseTest {
 
-	public static void main(String[] args) {
+	@Test
+	public static void loginPageTest() {
 
 		LoginPage loginPage = new LoginPage();
 		DashboardPage dashboardPage = loginPage.doLogin();

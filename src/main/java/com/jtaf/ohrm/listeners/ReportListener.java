@@ -92,15 +92,15 @@ public class ReportListener extends Page implements ITestListener, ISuiteListene
 
 	public void onFinish(ISuite suite) {
 
-		EmailTriggerUtil emailTriggerUtil = new EmailTriggerUtil();
-		try {
-			String[] reportPath = getDataFromPropFile("automationReportPath").split("\\$");
-			messageBody = reportPath[0] + InetAddress.getLocalHost().getHostAddress() + reportPath[1];
-			emailTriggerUtil.sendEmail(EmailConfig.mailServer, EmailConfig.from, EmailConfig.to, EmailConfig.subject,
-					messageBody);
-		} catch (UnknownHostException ex) {
-			ex.printStackTrace();
-		}
+//		EmailTriggerUtil emailTriggerUtil = new EmailTriggerUtil();
+//		try {
+//			String[] reportPath = getDataFromPropFile("automationReportPath").split("\\$");
+//			messageBody = reportPath[0] + InetAddress.getLocalHost().getHostAddress() + reportPath[1];
+//			emailTriggerUtil.sendEmail(EmailConfig.mailServer, EmailConfig.from, EmailConfig.to, EmailConfig.subject,
+//					messageBody);
+//		} catch (UnknownHostException ex) {
+//			ex.printStackTrace();
+//		}
 	}
 
 	public static String captureSnapShot() {
