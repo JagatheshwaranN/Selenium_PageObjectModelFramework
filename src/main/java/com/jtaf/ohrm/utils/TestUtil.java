@@ -11,19 +11,45 @@ public class TestUtil extends Page {
 
 	@DataProvider(name = "dataFetch")
 	public static Object[][] getData(Method method) {
-		return null;
-	}
 
-	@DataProvider(name = "dataFetchOld")
-	public static Object[][] getDataOld(Method method) {
-		return null;
+		String sheetName = method.getName();
+		int totalRows = excelReaderUtil.getRowCount(sheetName);
+		int totalCols = excelReaderUtil.getColumnCount(sheetName);
+		Object[][] data = new Object[totalRows - 1][1];
+		Hashtable<String, String> table = null;
+		for (int rowNum = 2; rowNum <= totalRows; rowNum++) {
+			table = new Hashtable<String, String>();
+			for (int colNum = 0; colNum < totalCols; colNum++) {
+				table.put(excelReaderUtil.getCellData(sheetName, colNum, 1),
+						excelReaderUtil.getCellData(sheetName, colNum, rowNum));
+				data[rowNum - 2][0] = table;
+			}
+		}
+		return data;
 	}
 
 	public static boolean isTestRunnable(String testName, ExcelReaderUtil excel) {
+
+		String sheetName = getDataFromPropFile("suiteSheet");
+		String testCaseColumn = getDataFromPropFile("testColumn");
+		String runTypeColumn = getDataFromPropFile("runColumn");
+		int rows = excel.getRowCount(sheetName);
+		for (int row = 2; row <= rows; row++) {
+			String testCase = excel.getCellData(sheetName, testCaseColumn, row);
+			if (testCase.equalsIgnoreCase(testName)) {
+				String runMode = excel.getCellData(sheetName, runTypeColumn, row);
+				if (runMode.equalsIgnoreCase("Y")) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+		}
 		return false;
 	}
 
 	public static void waitForSomeTime() {
+		
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException ex) {

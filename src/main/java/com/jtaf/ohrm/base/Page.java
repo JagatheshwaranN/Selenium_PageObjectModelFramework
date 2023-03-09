@@ -43,6 +43,7 @@ public class Page extends FileReaderUtil {
 				options = new ChromeOptions();
 				options.addArguments("--disable-extensions");
 				options.addArguments("--disable-infobars");
+				options.addArguments("--remote-allow-origins=*");
 				driver = new ChromeDriver(options);
 				log.debug(getDataFromPropFile("Browser") + " driver started");
 			} else if (getDataFromPropFile("Browser").equalsIgnoreCase("Firefox")) {
