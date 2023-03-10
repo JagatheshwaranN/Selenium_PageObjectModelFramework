@@ -1,5 +1,7 @@
 package com.jtaf.ohrm.pageObjects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,13 +17,13 @@ public class AdminPageElement {
 	public WebElement adminUserRoleDropDown;
 
 	@FindBy(xpath = "//div[@role='listbox']//div[@role='option']//span")
-	public WebElement adminUserRoleDropDownOptions;
+	public List<WebElement> adminUserRoleDropDownOptions;
 
 	@FindBy(xpath = "(//div[contains(@class,'oxd-select-text--after')])[2]")
 	public WebElement adminUserStatusDropDown;
 
 	@FindBy(xpath = "//div[@role='listbox']//div[@role='option']//span")
-	public WebElement adminUserStatusDropDownOptions;
+	public List<WebElement> adminUserStatusDropDownOptions;
 
 	@FindBy(xpath = "//button[contains(@class,'oxd-button--secondary orangehrm-left-space')]")
 	public WebElement adminSearch;

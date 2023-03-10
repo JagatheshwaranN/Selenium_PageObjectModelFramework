@@ -24,6 +24,8 @@ public class PFLoginPageTest extends PageFactoryPage {
 			throw new SkipException("Skipping the Test Case as the RunMode for the Data is set to N");
 		}
 		LoginPage loginPage = new LoginPage();
-		loginPage.doLogin(data.get("UserName"), data.get("Password"));
+		PageFactoryPage.setup();
+		loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
+		PageFactoryPage.tearDown();
 	}
 }

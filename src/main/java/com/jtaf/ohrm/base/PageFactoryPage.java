@@ -29,7 +29,7 @@ public class PageFactoryPage extends Constants {
 	public static ExcelReaderUtil excelReaderUtil = new ExcelReaderUtil(
 			System.getProperty("user.dir") + "/src/test/resources/com/jtaf/excel/testData.xlsx");
 
-	public void setup() {
+	public static void setup() {
 
 		if (driver == null) {
 			if (System.getenv("Browser") != null && !System.getenv("Browser").isEmpty()) {

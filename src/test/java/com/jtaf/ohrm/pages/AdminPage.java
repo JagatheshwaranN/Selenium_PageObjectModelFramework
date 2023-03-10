@@ -9,13 +9,13 @@ public class AdminPage extends ReusableComponent {
 
 	// PageFactory related code
 	public AdminPageElement adminPageElement;
-	
+
 	public AdminPage() {
-		
+
 		this.adminPageElement = new AdminPageElement();
 		PageFactory.initElements(driver, this.adminPageElement);
 	}
-	
+
 	// PageObjectModel basics code
 	public void searchUser(String user, String status) {
 
@@ -27,4 +27,18 @@ public class AdminPage extends ReusableComponent {
 		isElementPresent("adminSearchResultSection");
 		isElementPresent("adminSearchResultData");
 	}
+
+	// PageFactory related code
+	public void pfSearchUser(String user, String status) {
+
+		isElementPresent(adminPageElement.adminHeader);
+		elementType(adminPageElement.adminSearchUserName, user);
+		elementSelect(adminPageElement.adminUserRoleDropDown, adminPageElement.adminUserRoleDropDownOptions, user);
+		elementSelect(adminPageElement.adminUserStatusDropDown, adminPageElement.adminUserStatusDropDownOptions,
+				status);
+		elementClick(adminPageElement.adminSearch);
+		isElementPresent(adminPageElement.adminSearchResultSection);
+		isElementPresent(adminPageElement.adminSearchResultData);
+	}
+
 }
