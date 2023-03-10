@@ -12,11 +12,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.jtaf.ohrm.config.Constants;
 import com.jtaf.ohrm.utils.ExcelReaderUtil;
 import com.jtaf.ohrm.utils.ExtentReportUtil;
-import com.jtaf.ohrm.utils.FileReaderUtil;
 
-public class Page extends FileReaderUtil {
+public class PageFactoryPage extends Constants {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
@@ -29,40 +29,38 @@ public class Page extends FileReaderUtil {
 	public static ExcelReaderUtil excelReaderUtil = new ExcelReaderUtil(
 			System.getProperty("user.dir") + "/src/test/resources/com/jtaf/excel/testData.xlsx");
 
-	public Page() {
+	public void setup() {
 
 		if (driver == null) {
-			loadPropertyFiles();
 			if (System.getenv("Browser") != null && !System.getenv("Browser").isEmpty()) {
 				browser = System.getenv("Browser");
 			} else {
-				browser = getDataFromPropFile("Browser");
+				browser = Browser;
 			}
-			properties.setProperty("Browser", browser);
-			if (getDataFromPropFile("Browser").equalsIgnoreCase("Chrome")) {
+			if (browser.equalsIgnoreCase("Chrome")) {
 				options = new ChromeOptions();
 				options.addArguments("--disable-extensions");
 				options.addArguments("--disable-infobars");
 				options.addArguments("--remote-allow-origins=*");
 				driver = new ChromeDriver(options);
-				log.debug(getDataFromPropFile("Browser") + " driver started");
-			} else if (getDataFromPropFile("Browser").equalsIgnoreCase("Firefox")) {
+				log.debug(browser + " driver started");
+			} else if (browser.equalsIgnoreCase("Firefox")) {
 				driver = new FirefoxDriver();
-				log.debug(getDataFromPropFile("Browser") + " driver started");
-			} else if (getDataFromPropFile("Browser").equalsIgnoreCase("Edge")) {
+				log.debug(browser + " driver started");
+			} else if (browser.equalsIgnoreCase("Edge")) {
 				driver = new EdgeDriver();
-				log.debug(getDataFromPropFile("Browser") + " driver started");
+				log.debug(browser + " driver started");
 			}
 			driver.manage().window().maximize();
-			driver.manage().timeouts()
-					.implicitlyWait(Duration.ofSeconds(Integer.parseInt(getDataFromPropFile("implicit.wait"))));
-			wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(getDataFromPropFile("wait.time"))));
-			driver.get(getDataFromPropFile("url"));
-			log.debug("Driver launches the application " + getDataFromPropFile("url"));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(ImplicitWait)));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(WebDriverWaitTime)));
+			driver.get(URL);
+			log.debug("Driver launches the application " + URL);
 		}
 	}
 
-	public static void closeBrowser() {
+	public static void tearDown() {
+
 		driver.quit();
 	}
 }
