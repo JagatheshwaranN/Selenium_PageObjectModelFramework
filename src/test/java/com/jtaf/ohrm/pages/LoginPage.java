@@ -2,6 +2,7 @@ package com.jtaf.ohrm.pages;
 
 import org.openqa.selenium.support.PageFactory;
 
+import com.jtaf.ohrm.common.PFReusableComponent;
 import com.jtaf.ohrm.common.ReusableComponent;
 import com.jtaf.ohrm.pageObjects.LoginPageElement;
 
@@ -36,9 +37,9 @@ public class LoginPage extends ReusableComponent {
 	// PageFactory related code
 	public DashboardPage pfDoLogin(String username, String password) {
 
-		elementType(loginPageElement.userName, username);
-		elementType(loginPageElement.passWord, password);
-		elementClick(loginPageElement.login);
+		PFReusableComponent.elementType(loginPageElement.userName, username);
+		PFReusableComponent.elementType(loginPageElement.passWord, password);
+		PFReusableComponent.elementClick(loginPageElement.login);
 		return new DashboardPage();
 	}
 }
