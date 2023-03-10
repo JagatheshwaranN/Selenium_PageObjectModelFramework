@@ -1,9 +1,21 @@
 package com.jtaf.ohrm.pages;
 
+import org.openqa.selenium.support.PageFactory;
+
 import com.jtaf.ohrm.common.ReusableComponent;
+import com.jtaf.ohrm.pageObjects.LoginPageElement;
 
 public class LoginPage extends ReusableComponent {
 
+	// PageFactory related code
+	public LoginPageElement loginPageElement;
+
+	public LoginPage() {
+		this.loginPageElement = new LoginPageElement();
+		PageFactory.initElements(driver, this.loginPageElement);
+	}
+
+	// PageObjectModel basics code
 	public DashboardPage doLogin(String username, String password) {
 
 		elementType("userName", username);
@@ -12,6 +24,7 @@ public class LoginPage extends ReusableComponent {
 		return new DashboardPage();
 	}
 
+	// PageObjectModel basics code
 	public void gotoForgotPasswordPage() {
 
 		elementClick("forgotPasswordLink");
