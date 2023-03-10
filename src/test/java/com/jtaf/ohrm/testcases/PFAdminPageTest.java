@@ -8,6 +8,9 @@ import com.jtaf.ohrm.base.PageFactoryPage;
 import com.jtaf.ohrm.pages.AdminPage;
 import com.jtaf.ohrm.pages.DashboardPage;
 import com.jtaf.ohrm.pages.LoginPage;
+import com.jtaf.ohrm.pages.PFAdminPage;
+import com.jtaf.ohrm.pages.PFDashboardPage;
+import com.jtaf.ohrm.pages.PFLoginPage;
 import com.jtaf.ohrm.utils.TestUtil;
 
 public class PFAdminPageTest {
@@ -15,10 +18,10 @@ public class PFAdminPageTest {
 	@Test(dataProviderClass = TestUtil.class, dataProvider = "dataFetch")
 	public static void adminPageTest(Hashtable<String, String> data) {
 
-		LoginPage loginPage = new LoginPage();
+		PFLoginPage loginPage = new PFLoginPage();
 		PageFactoryPage.setup();
-		DashboardPage dashboardPage = loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
-		AdminPage adminPage = dashboardPage.navigateToAdminPage();
+		PFDashboardPage dashboardPage = loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
+		PFAdminPage adminPage = dashboardPage.pfNavigateToAdminPage();
 		adminPage.pfSearchUser(data.get("User"), data.get("SearchCriteria"));
 		PageFactoryPage.tearDown();
 	}

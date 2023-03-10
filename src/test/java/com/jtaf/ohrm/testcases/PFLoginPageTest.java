@@ -7,7 +7,8 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.jtaf.ohrm.base.PageFactoryPage;
-import com.jtaf.ohrm.pages.LoginPage;
+
+import com.jtaf.ohrm.pages.PFLoginPage;
 import com.jtaf.ohrm.utils.TestUtil;
 
 public class PFLoginPageTest extends PageFactoryPage {
@@ -23,7 +24,7 @@ public class PFLoginPageTest extends PageFactoryPage {
 		if (!data.get("RunMode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the Test Case as the RunMode for the Data is set to N");
 		}
-		LoginPage loginPage = new LoginPage();
+		PFLoginPage loginPage = new PFLoginPage();
 		PageFactoryPage.setup();
 		loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
 		PageFactoryPage.tearDown();
