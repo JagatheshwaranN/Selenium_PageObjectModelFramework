@@ -5,16 +5,16 @@
 		<listener
 			class-name="org.uncommons.reportng.JUnitXMLReporter" />
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="com.jtaf.ohrm.listeners.ReportListener" />
+		<listener class-name="com.jtaf.ohrm.listeners.PFReportListener" />
 	</listeners>
-	<test thread-count="1" name="LoginPageTest">
+	<test thread-count="1" name="PFLoginPageTest1">
 		<classes>
-			<class name="com.jtaf.ohrm.testcases.LoginPageTest" />
+			<class name="com.jtaf.ohrm.testcases.PFLoginPageTest" />
 		</classes>
 	</test>
-	<test thread-count="1" name="AdminPageTest">
+	<test thread-count="1" name="PFAdminPageTest">
 		<classes>
-			<class name="com.jtaf.ohrm.testcases.AdminPageTest" />
+			<class name="com.jtaf.ohrm.testcases.PFAdminPageTest" />
 		</classes>
 	</test>
 </suite>

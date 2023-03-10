@@ -7,7 +7,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.jtaf.ohrm.base.PageFactoryPage;
-
+import com.jtaf.ohrm.common.PFReusableComponent;
 import com.jtaf.ohrm.pages.PFLoginPage;
 import com.jtaf.ohrm.utils.TestUtil;
 
@@ -25,9 +25,7 @@ public class PFLoginPageTest extends PageFactoryPage {
 			throw new SkipException("Skipping the Test Case as the RunMode for the Data is set to N");
 		}
 
-		PageFactoryPage.setup();
 		PFLoginPage loginPage = new PFLoginPage();
-		loginPage.pfDoLogin("admin", "admin123");
-		PageFactoryPage.tearDown();
+		loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
 	}
 }

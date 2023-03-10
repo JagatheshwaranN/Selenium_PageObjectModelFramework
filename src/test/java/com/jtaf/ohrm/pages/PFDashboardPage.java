@@ -1,11 +1,13 @@
 package com.jtaf.ohrm.pages;
 
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.jtaf.ohrm.common.PFReusableComponent;
+import com.jtaf.ohrm.config.Constants;
 import com.jtaf.ohrm.pageObjects.DashboardPageElement;
 
-public class PFDashboardPage extends PFReusableComponent {
+public class PFDashboardPage extends PFLoginPage {
 
 	// PageFactory code
 	public DashboardPageElement dashboardPageElement;
@@ -13,7 +15,9 @@ public class PFDashboardPage extends PFReusableComponent {
 	public PFDashboardPage() {
 
 		this.dashboardPageElement = new DashboardPageElement();
-		PageFactory.initElements(driver, this.dashboardPageElement);
+		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
+				Integer.parseInt(Constants.WebDriverWaitTime));
+		PageFactory.initElements(ajaxElementLocatorFactory, this.dashboardPageElement);
 	}
 
 	public void pfUserDropDown() {
