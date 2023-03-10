@@ -1,5 +1,2 @@
-10-03-2023 13:03:533 DEBUG devpinoyLogger :30 - Config & Object Repository property files are loaded !!
-10-03-2023 13:03:806 DEBUG devpinoyLogger :48 - Chrome driver started
-10-03-2023 13:03:398 DEBUG devpinoyLogger :61 - Driver launches the application https://opensource-demo.orangehrmlive.com/web/index.php
-10-03-2023 13:03:529 DEBUG devpinoyLogger :46 - Chrome driver started
-10-03-2023 13:03:733 DEBUG devpinoyLogger :58 - Driver launches the application https://opensource-demo.orangehrmlive.com/web/index.php
+10-03-2023 14:03:741 DEBUG devpinoyLogger :46 - Chrome driver started
+10-03-2023 14:03:336 DEBUG devpinoyLogger :58 - Driver launches the application https://opensource-demo.orangehrmlive.com/web/index.php

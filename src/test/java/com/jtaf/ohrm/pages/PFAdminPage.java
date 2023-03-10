@@ -20,9 +20,10 @@ public class PFAdminPage extends PFReusableComponent {
 
 		isElementPresent(adminPageElement.adminHeader);
 		elementType(adminPageElement.adminSearchUserName, user);
-		elementSelect(adminPageElement.adminUserRoleDropDown, adminPageElement.adminUserRoleDropDownOptions, user);
-		elementSelect(adminPageElement.adminUserStatusDropDown, adminPageElement.adminUserStatusDropDownOptions,
-				status);
+		elementSelect(adminPageElement.adminUserRoleDropDown,
+				adminPageElement.adminUserRoleDropDownOptions, user);
+		elementSelect(adminPageElement.adminUserStatusDropDown,
+				adminPageElement.adminUserStatusDropDownOptions, status);
 		elementClick(adminPageElement.adminSearch);
 		isElementPresent(adminPageElement.adminSearchResultSection);
 		isElementPresent(adminPageElement.adminSearchResultData);
