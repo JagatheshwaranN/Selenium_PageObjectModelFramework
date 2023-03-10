@@ -11,6 +11,7 @@ public class LoginPage extends ReusableComponent {
 	public LoginPageElement loginPageElement;
 
 	public LoginPage() {
+		
 		this.loginPageElement = new LoginPageElement();
 		PageFactory.initElements(driver, this.loginPageElement);
 	}
