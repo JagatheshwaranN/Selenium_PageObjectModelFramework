@@ -1,10 +1,8 @@
 package com.jtaf.ohrm.pages;
 
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.jtaf.ohrm.common.PFReusableComponent;
-import com.jtaf.ohrm.config.Constants;
 import com.jtaf.ohrm.pageObjects.LoginPageElement;
 
 public class PFLoginPage extends PFReusableComponent {
