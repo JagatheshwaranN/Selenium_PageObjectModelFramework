@@ -15,9 +15,9 @@ public class PFLoginPage extends PFReusableComponent {
 	public PFLoginPage() {
 
 		this.loginPageElement = new LoginPageElement();
-		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
-				Integer.parseInt(Constants.WebDriverWaitTime));
-		PageFactory.initElements(ajaxElementLocatorFactory, this.loginPageElement);
+//		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
+//				Integer.parseInt(Constants.WebDriverWaitTime));
+		PageFactory.initElements(driver, this.loginPageElement);
 	}
 
 	public PFDashboardPage pfDoLogin(String username, String password) {

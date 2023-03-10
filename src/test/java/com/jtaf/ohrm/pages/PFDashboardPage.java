@@ -15,9 +15,9 @@ public class PFDashboardPage extends PFLoginPage {
 	public PFDashboardPage() {
 
 		this.dashboardPageElement = new DashboardPageElement();
-		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
-				Integer.parseInt(Constants.WebDriverWaitTime));
-		PageFactory.initElements(ajaxElementLocatorFactory, this.dashboardPageElement);
+//		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
+//				Integer.parseInt(Constants.WebDriverWaitTime));
+		PageFactory.initElements(driver, this.dashboardPageElement);
 	}
 
 	public void pfUserDropDown() {

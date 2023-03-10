@@ -7,7 +7,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.jtaf.ohrm.base.PageFactoryPage;
-import com.jtaf.ohrm.common.PFReusableComponent;
+
 import com.jtaf.ohrm.pages.PFLoginPage;
 import com.jtaf.ohrm.utils.TestUtil;
 

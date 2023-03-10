@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import org.testng.annotations.Test;
 
 import com.jtaf.ohrm.base.PageFactoryPage;
-import com.jtaf.ohrm.common.PFReusableComponent;
+
 import com.jtaf.ohrm.pages.PFAdminPage;
 import com.jtaf.ohrm.pages.PFDashboardPage;
 import com.jtaf.ohrm.pages.PFLoginPage;

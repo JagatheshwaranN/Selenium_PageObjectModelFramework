@@ -78,7 +78,7 @@ public class TestUtil extends Page {
 	public static void waitForSomeTime() {
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} catch (InterruptedException ex) {
 			ex.printStackTrace();
 		}

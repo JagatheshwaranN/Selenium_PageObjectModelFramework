@@ -15,9 +15,9 @@ public class PFAdminPage extends PFDashboardPage {
 	public PFAdminPage() {
 
 		this.adminPageElement = new AdminPageElement();
-		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
-				Integer.parseInt(Constants.WebDriverWaitTime));
-		PageFactory.initElements(ajaxElementLocatorFactory, this.adminPageElement);
+//		AjaxElementLocatorFactory ajaxElementLocatorFactory = new AjaxElementLocatorFactory(driver,
+//				Integer.parseInt(Constants.WebDriverWaitTime));
+		PageFactory.initElements(driver, this.adminPageElement);
 	}
 
 	public void pfSearchUser(String user, String status) {
