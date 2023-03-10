@@ -11,7 +11,7 @@ public class LoginPage extends ReusableComponent {
 	public LoginPageElement loginPageElement;
 
 	public LoginPage() {
-		
+
 		this.loginPageElement = new LoginPageElement();
 		PageFactory.initElements(driver, this.loginPageElement);
 	}
@@ -31,5 +31,14 @@ public class LoginPage extends ReusableComponent {
 		elementClick("forgotPasswordLink");
 		elementType("fplUserName", "admin");
 		elementClick("fplReset");
+	}
+
+	// PageFactory related code
+	public DashboardPage pfDoLogin(String username, String password) {
+
+		elementType(loginPageElement.userName, username);
+		elementType(loginPageElement.passWord, password);
+		elementClick(loginPageElement.login);
+		return new DashboardPage();
 	}
 }
