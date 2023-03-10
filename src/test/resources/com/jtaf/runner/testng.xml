@@ -7,7 +7,7 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="com.jtaf.ohrm.listeners.ReportListener" />
 	</listeners>
-	<test thread-count="1" name="LoginPageTest">
+	<!-- <test thread-count="1" name="LoginPageTest">
 		<classes>
 			<class name="com.jtaf.ohrm.testcases.LoginPageTest" />
 		</classes>
@@ -15,6 +15,11 @@
 	<test thread-count="1" name="AdminPageTest">
 		<classes>
 			<class name="com.jtaf.ohrm.testcases.AdminPageTest" />
+		</classes>
+	</test> -->
+	<test thread-count="1" name="LoginPageTest">
+		<classes>
+			<class name="com.jtaf.ohrm.testcases.PFLoginPageTest" />
 		</classes>
 	</test>
 </suite>

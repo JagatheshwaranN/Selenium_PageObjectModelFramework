@@ -13,7 +13,7 @@ import com.jtaf.ohrm.utils.TestUtil;
 public class PFAdminPageTest {
 
 	@Test(dataProviderClass = TestUtil.class, dataProvider = "dataFetch")
-	public static void adminPageTest(Hashtable<String, String> data) {
+	public static void pfAdminPageTest(Hashtable<String, String> data) {
 
 		PFLoginPage loginPage = new PFLoginPage();
 		PageFactoryPage.setup();

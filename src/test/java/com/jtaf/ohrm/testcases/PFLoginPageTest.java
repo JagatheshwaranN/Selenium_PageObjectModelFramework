@@ -14,7 +14,7 @@ import com.jtaf.ohrm.utils.TestUtil;
 public class PFLoginPageTest extends PageFactoryPage {
 
 	@Test(dataProviderClass = TestUtil.class, dataProvider = "dataFetch")
-	public static void loginPageTest(Hashtable<String, String> data) {
+	public static void pfLoginPageTest(Hashtable<String, String> data) {
 
 		Class<PFLoginPageTest> classObj = PFLoginPageTest.class;
 		Method[] methods = classObj.getMethods();
@@ -24,9 +24,10 @@ public class PFLoginPageTest extends PageFactoryPage {
 		if (!data.get("RunMode").equalsIgnoreCase("Y")) {
 			throw new SkipException("Skipping the Test Case as the RunMode for the Data is set to N");
 		}
-		PFLoginPage loginPage = new PFLoginPage();
+
 		PageFactoryPage.setup();
-		loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
+		PFLoginPage loginPage = new PFLoginPage();
+		loginPage.pfDoLogin("admin", "admin123");
 		PageFactoryPage.tearDown();
 	}
 }
