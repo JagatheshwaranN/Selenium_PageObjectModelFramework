@@ -7,7 +7,7 @@ import org.testng.SkipException;
 import org.testng.annotations.Test;
 
 import com.jtaf.ohrm.base.PageFactoryPage;
-
+import com.jtaf.ohrm.pages.PFDashboardPage;
 import com.jtaf.ohrm.pages.PFLoginPage;
 import com.jtaf.ohrm.utils.TestUtil;
 
@@ -26,6 +26,7 @@ public class PFLoginPageTest extends PageFactoryPage {
 		}
 
 		PFLoginPage loginPage = new PFLoginPage();
-		loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
+		PFDashboardPage dashboardPage = loginPage.pfDoLogin(data.get("UserName"), data.get("Password"));
+		dashboardPage.pfDoLogout();
 	}
 }

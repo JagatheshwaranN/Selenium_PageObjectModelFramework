@@ -7,14 +7,14 @@
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="com.jtaf.ohrm.listeners.PFReportListener" />
 	</listeners>
-	<test thread-count="1" name="PFLoginPageTest1">
+	<test thread-count="1" name="PFLoginPageTest">
 		<classes>
 			<class name="com.jtaf.ohrm.testcases.PFLoginPageTest" />
 		</classes>
 	</test>
 	<test thread-count="1" name="PFAdminPageTest">
-		<classes>
-			<class name="com.jtaf.ohrm.testcases.PFAdminPageTest" />
-		</classes>
-	</test>
+	<classes>
+		<class name="com.jtaf.ohrm.testcases.PFAdminPageTest" />
+	</classes>
+</test>
 </suite>

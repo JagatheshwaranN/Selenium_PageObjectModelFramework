@@ -1,9 +1,17 @@
 package com.jtaf.ohrm.pageObjects;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPageElement {
+
+	/**
+	 * @FindAll - It is used to identify an element on the page with more than one
+	 *          locator. For example, in below code for login button, it has two
+	 *          locators such as xpath and css. If incase anyone of the locator
+	 *          didn't work then the element can be identified by the other locator.
+	 */
 
 	@FindBy(xpath = "//input[@name='username']")
 	public WebElement userName;
@@ -11,7 +19,11 @@ public class LoginPageElement {
 	@FindBy(xpath = "//input[@name='password']")
 	public WebElement passWord;
 
-	@FindBy(xpath = "//button[contains(@class,'orangehrm-login-button')]")
+//	@FindBy(xpath = "//button[contains(@class,'orangehrm-login-button')]")
+//	public WebElement login;
+
+	@FindAll({ @FindBy(xpath = "//button[@type='submit']"),
+			@FindBy(css = ".oxd-button.oxd-button--medium.oxd-button--main.orangehrm-login-button") })
 	public WebElement login;
 
 	@FindBy(xpath = "//p[contains(@class,'login-forgot-header')]")
