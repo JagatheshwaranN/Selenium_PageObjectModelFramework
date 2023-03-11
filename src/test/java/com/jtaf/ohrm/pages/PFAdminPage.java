@@ -6,7 +6,6 @@ import com.jtaf.ohrm.pageObjects.AdminPageElement;
 
 public class PFAdminPage extends PFDashboardPage {
 
-	// PageFactory related code
 	public AdminPageElement adminPageElement;
 
 	public PFAdminPage() {

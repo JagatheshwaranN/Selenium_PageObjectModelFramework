@@ -4,7 +4,6 @@ import com.jtaf.ohrm.common.ReusableComponent;
 
 public class AdminPage extends ReusableComponent {
 
-	// PageObjectModel basics code
 	public void searchUser(String user, String status) {
 
 		isElementPresent("adminHeader");

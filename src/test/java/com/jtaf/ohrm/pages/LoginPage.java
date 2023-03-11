@@ -4,7 +4,6 @@ import com.jtaf.ohrm.common.ReusableComponent;
 
 public class LoginPage extends ReusableComponent {
 
-	// PageObjectModel basics code
 	public DashboardPage doLogin(String username, String password) {
 
 		elementType("userName", username);
@@ -13,7 +12,6 @@ public class LoginPage extends ReusableComponent {
 		return new DashboardPage();
 	}
 
-	// PageObjectModel basics code
 	public void gotoForgotPasswordPage() {
 
 		elementClick("forgotPasswordLink");

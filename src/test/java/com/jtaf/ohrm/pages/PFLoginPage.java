@@ -7,7 +7,6 @@ import com.jtaf.ohrm.pageObjects.LoginPageElement;
 
 public class PFLoginPage extends PFReusableComponent {
 
-	// PageFactory code
 	public LoginPageElement loginPageElement;
 
 	public PFLoginPage() {

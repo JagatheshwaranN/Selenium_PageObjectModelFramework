@@ -6,7 +6,6 @@ import com.jtaf.ohrm.pageObjects.DashboardPageElement;
 
 public class PFDashboardPage extends PFLoginPage {
 
-	// PageFactory code
 	public DashboardPageElement dashboardPageElement;
 
 	public PFDashboardPage() {
