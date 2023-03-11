@@ -3,6 +3,7 @@ package com.jtaf.ohrm.pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
+import java.util.List;
 
 public class DashboardPageElement {
 
@@ -27,4 +28,6 @@ public class DashboardPageElement {
 	@FindBy(xpath = "//a[contains(@href,'admin/viewAdminModule')]")
 	public WebElement adminSection;
 
+	@FindBy(xpath = "//div[@class='oxd-grid-item oxd-grid-item--gutters orangehrm-quick-launch-card']")
+	public List<WebElement> quickLaunchCards;
 }

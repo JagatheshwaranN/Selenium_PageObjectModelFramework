@@ -92,6 +92,14 @@ public class ErrorCapture {
 			addVerifyFailure(ex);
 		}
 	}
+	
+	public static void verifyEquals(int actual, int expected) {
+		try {
+			validateEquals(actual, expected);
+		} catch (Throwable ex) {
+			addVerifyFailure(ex);
+		}
+	}
 
 	public static void verifyEquals(Object actual, Object expected) {
 		try {

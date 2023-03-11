@@ -1,5 +1,8 @@
 package com.jtaf.ohrm.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import com.jtaf.ohrm.pageObjects.DashboardPageElement;
@@ -32,5 +35,9 @@ public class PFDashboardPage extends PFLoginPage {
 
 		elementClick(dashboardPageElement.adminSection);
 		return new PFAdminPage();
+	}
+
+	public List<WebElement> getQuickLaunchCards() {
+		return dashboardPageElement.quickLaunchCards;
 	}
 }
