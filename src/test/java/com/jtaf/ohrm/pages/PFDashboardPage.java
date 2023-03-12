@@ -21,19 +21,19 @@ public class PFDashboardPage extends PFLoginPage {
 
 	public void pfUserDropDown() {
 
-		elementClick(dashboardPageElement.userDropDown);
-		isElementPresent(dashboardPageElement.userDropDownMenu);
+		elementClick(dashboardPageElement.userDropDown, dashboardPageElement.userDropDownLabel);
+		isElementPresent(dashboardPageElement.userDropDownMenu, dashboardPageElement.userDropDownMenuLabel);
 	}
 
 	public void pfDoLogout() {
 
 		pfUserDropDown();
-		elementClick(dashboardPageElement.logout);
+		elementClick(dashboardPageElement.logout, dashboardPageElement.logoutLabel);
 	}
 
 	public PFAdminPage pfNavigateToAdminPage() {
 
-		elementClick(dashboardPageElement.adminSection);
+		elementClick(dashboardPageElement.adminSection, dashboardPageElement.adminSectionLabel);
 		return new PFAdminPage();
 	}
 

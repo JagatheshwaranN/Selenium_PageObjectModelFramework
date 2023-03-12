@@ -1,3 +1,6 @@
-12-03-2023 11:03:537 DEBUG devpinoyLogger :49 - Chrome driver started
-12-03-2023 11:03:632 DEBUG devpinoyLogger :61 - Driver launches the application https://opensource-demo.orangehrmlive.com/web/index.php
-12-03-2023 11:03:930 DEBUG devpinoyLogger :69 - Driver stopped and closed
+12-03-2023 12:03:120 DEBUG devpinoyLogger :49 - Chrome driver started
+12-03-2023 12:03:419 DEBUG devpinoyLogger :61 - Driver launches the application https://opensource-demo.orangehrmlive.com/web/index.php
+12-03-2023 12:03:600 DEBUG devpinoyLogger :69 - Driver stopped and closed
+12-03-2023 12:03:729 DEBUG devpinoyLogger :49 - Chrome driver started
+12-03-2023 12:03:632 DEBUG devpinoyLogger :61 - Driver launches the application https://opensource-demo.orangehrmlive.com/web/index.php
+12-03-2023 12:03:317 DEBUG devpinoyLogger :69 - Driver stopped and closed

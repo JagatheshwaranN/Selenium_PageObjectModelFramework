@@ -19,9 +19,9 @@ public class PFLoginPage extends PFReusableComponent {
 
 	public PFDashboardPage pfDoLogin(String username, String password) {
 
-		elementType(loginPageElement.userName, username);
-		elementType(loginPageElement.passWord, password);
-		elementClick(loginPageElement.login);
+		elementType(loginPageElement.userName, username, loginPageElement.userNameLabel);
+		elementType(loginPageElement.passWord, password, loginPageElement.passWordLabel);
+		elementClick(loginPageElement.login, loginPageElement.loginLabel);
 		return new PFDashboardPage();
 	}
 }

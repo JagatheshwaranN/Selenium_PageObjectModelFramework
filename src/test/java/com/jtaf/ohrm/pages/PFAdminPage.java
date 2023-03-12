@@ -18,13 +18,14 @@ public class PFAdminPage extends PFDashboardPage {
 
 	public void pfSearchUser(String user, String status) {
 
-		isElementPresent(adminPageElement.adminHeader);
-		elementType(adminPageElement.adminSearchUserName, user);
-		elementSelect(adminPageElement.adminUserRoleDropDown, adminPageElement.adminUserRoleDropDownOptions, user);
-		elementSelect(adminPageElement.adminUserStatusDropDown, adminPageElement.adminUserStatusDropDownOptions,
-				status);
-		elementClick(adminPageElement.adminSearch);
-		isElementPresent(adminPageElement.adminSearchResultSection);
-		isElementPresent(adminPageElement.adminSearchResultData);
+		isElementPresent(adminPageElement.adminHeader, adminPageElement.adminHeaderLabel);
+		elementType(adminPageElement.adminSearchUserName, user, adminPageElement.adminSearchUserNameLabel);
+		elementSelect(adminPageElement.adminUserRoleDropDown, adminPageElement.adminUserRoleDropDownOptions, user,
+				adminPageElement.adminUserRoleDropDownLabel);
+		elementSelect(adminPageElement.adminUserStatusDropDown, adminPageElement.adminUserStatusDropDownOptions, status,
+				adminPageElement.adminUserStatusDropDownLabel);
+		elementClick(adminPageElement.adminSearch, adminPageElement.adminSearchLabel);
+		isElementPresent(adminPageElement.adminSearchResultSection, adminPageElement.adminSearchResultSectionLabel);
+		isElementPresent(adminPageElement.adminSearchResultData, adminPageElement.adminSearchResultDataLabel);
 	}
 }
