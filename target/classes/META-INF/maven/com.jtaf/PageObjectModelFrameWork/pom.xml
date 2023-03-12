@@ -137,7 +137,7 @@
 				<configuration>
 					<testFailureIgnore> false </testFailureIgnore>
 					<suiteXmlFiles>
-						<suiteXmlFile>src/test/resources/com/jtaf/runner/testng.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/com/jtaf/runner/${suiteXmlFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

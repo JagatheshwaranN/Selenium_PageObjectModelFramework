@@ -15,8 +15,8 @@
 		</classes>
 	</test>
 	<test thread-count="1" name="PFAdminPageTest">
-		<classes>
-			<class name="com.jtaf.ohrm.testcases.PFAdminPageTest" />
-		</classes>
-	</test>
+	<classes>
+		<class name="com.jtaf.ohrm.testcases.PFAdminPageTest" />
+	</classes>
+</test>
 </suite>
