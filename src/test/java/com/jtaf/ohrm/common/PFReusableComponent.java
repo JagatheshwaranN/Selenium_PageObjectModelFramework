@@ -11,11 +11,11 @@ import com.jtaf.ohrm.base.PageFactoryPage;
 
 public class PFReusableComponent extends PageFactoryPage {
 
-	public static boolean isElementPresent(WebElement element) {
+	public static boolean isElementPresent(WebElement element, String elementLabel) {
 
 		try {
 			if (element != null) {
-				test.log(Status.INFO, element + " is present on the page");
+				test.log(Status.INFO, elementLabel + " is present on the page");
 			}
 			return true;
 		} catch (Exception ex) {
@@ -23,57 +23,58 @@ public class PFReusableComponent extends PageFactoryPage {
 		}
 	}
 
-	public static void elementClick(WebElement element) {
+	public static void elementClick(WebElement element, String elementLabel) {
 
 		try {
 			if (element != null) {
 				element.click();
-				test.log(Status.INFO, "Clicked on the " + element);
+				test.log(Status.INFO, "Clicked on the " + elementLabel);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	public static void elementType(WebElement element, String value) {
+	public static void elementType(WebElement element, String value, String elementLabel) {
 
 		try {
 			if (element != null) {
 				element.sendKeys(value);
-				test.log(Status.INFO, "Typed into " + element + " with value as " + value);
+				test.log(Status.INFO, "Typed into " + elementLabel + " with value as " + value);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	public static void elementSelect(WebElement element, String value) {
+	public static void elementSelect(WebElement element, String value, String elementLabel) {
 
 		try {
 			if (element != null) {
 				Select select = new Select(element);
 				select.selectByVisibleText(value);
-				test.log(Status.INFO, "Selected " + value + " in the dropdown " + element);
+				test.log(Status.INFO, "Selected " + value + " in the dropdown " + elementLabel);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	public static void elementSelect(WebElement element, int index) {
+	public static void elementSelect(WebElement element, int index, String elementLabel) {
 
 		try {
 			if (element != null) {
 				Select select = new Select(element);
 				select.selectByIndex(index);
-				test.log(Status.INFO, "Selected " + index + " in the dropdown " + element);
+				test.log(Status.INFO, "Selected " + index + " in the dropdown " + elementLabel);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
 
-	public static void elementSelect(WebElement element1, List<WebElement> element2, String value) {
+	public static void elementSelect(WebElement element1, List<WebElement> element2, String value,
+			String elementLabel1) {
 
 		try {
 			element1.click();
@@ -83,12 +84,12 @@ public class PFReusableComponent extends PageFactoryPage {
 				if (option.getText().equalsIgnoreCase(value)) {
 					flag = true;
 					option.click();
-					test.log(Status.INFO, "Selected " + value + " in the dropdown " + element1);
+					test.log(Status.INFO, "Selected " + value + " in the dropdown " + elementLabel1);
 					break;
 				}
 			}
 			if (flag == false) {
-				System.out.println(flag + "-" + value + " option not found on the " + element1);
+				System.out.println(flag + "-" + value + " option not found on the " + elementLabel1);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
