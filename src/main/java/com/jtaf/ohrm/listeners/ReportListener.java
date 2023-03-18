@@ -57,7 +57,7 @@ public class ReportListener extends Page implements ITestListener, ISuiteListene
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
 		TestUtil.waitForSomeTime();
 		String failTestCaseBase64Snapshot = ((TakesScreenshot) Page.driver).getScreenshotAs(OutputType.BASE64);
-		test.fail(result.getName().toUpperCase() + " Test Passed",
+		test.fail(result.getName().toUpperCase() + " Test Failed",
 				MediaEntityBuilder.createScreenCaptureFromBase64String(failTestCaseBase64Snapshot).build());
 		String screenToAttach = captureSnapShot();
 		Reporter.log("<br>");
