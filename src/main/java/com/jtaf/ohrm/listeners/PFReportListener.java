@@ -71,7 +71,7 @@ public class PFReportListener extends PageFactoryPage implements ITestListener, 
 
 	public void onTestSkipped(ITestResult result) {
 
-		test.log(Status.SKIP, result.getName().toUpperCase() + " Test Skipped. At the RunMode is set to N");
+		test.log(Status.SKIP, result.getName().toUpperCase() + " Test Skipped. As the RunMode is set to N");
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
